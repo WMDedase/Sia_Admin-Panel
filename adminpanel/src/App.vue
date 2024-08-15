@@ -2,9 +2,9 @@
   <v-app>
     <div class="app">
       <template v-if="shouldRenderComponents"> <!-- Render sidebar and header if not on login page or if authenticated -->
-        <Sidebar v-if="isAuthenticated" />
+        <Sidebar/>
         <div class="headerAndContent">
-          <Header v-if="isAuthenticated" />
+          <Header/>
           <router-view v-slot="{ Component }">
             <transition name="fade" mode="out-in">
               <Component :is="Component" />
