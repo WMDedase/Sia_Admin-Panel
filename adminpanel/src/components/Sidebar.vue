@@ -43,7 +43,7 @@ watchEffect(() => {
         
         <img class="sna-logo" src="/src/assets/SNA Logo with BG.png" alt="">
 
-        <h2 class="sp-text"> Student Profiling</h2>
+        <h2 class="sp-text"> Admin Panel</h2>
 
         <!-- <div class="menu-toggle-wrap">
           <button class="menu-toggle" @click="toggleMenu"> 
@@ -64,33 +64,19 @@ watchEffect(() => {
               <span class="text">Dashboard</span>
           </router-link>
 
-        <!-- Clickable Dropdown structure -->
-        <div class="dropdown " @click="toggleDropdown" :class="{ 'open': isDropdownOpen }">
-            <button class="dropbtn">
-            <span class="material-icons">article</span>
-            <span class="text" style="font-size:14px;">Status Information</span>
-            <span class="material-icons dropdown-icon">{{ isDropdownOpen ? 'expand_less' : 'expand_more' }}</span>
-
-            </button>
-            <transition name="fade">
-            <div class="dropdown-content" v-if="isDropdownOpen" @click.stop>
-                <!-- Five tabs in the dropdown -->
-                <router-link to="/clinic"><span class="material-icons">medical_services</span><span class="text">Clinic</span></router-link>
-                <router-link to="/guidance"><span class="material-icons">accessibility</span><span class="text">Guidance</span></router-link>
-                <router-link to="/inventory"><span class="material-icons">inventory</span><span class="text">Inventory</span></router-link>
-                <router-link to="/library"><span class="material-icons">book</span><span class="text">Library</span></router-link>
-            </div>
-            </transition>
-        </div>
-
-        <router-link class="button" to="/schedule">
+        <router-link class="button" to="/accounts">
           <span class="material-icons">calendar_month</span>
-          <span class="text">Schedule</span>
+          <span class="text">Account</span>
       </router-link>
 
-        <router-link class="button" to="/profile">
+        <router-link class="button" to="/sectionadding">
           <span class="material-icons">account_circle</span>
-          <span class="text">Profile</span>
+          <span class="text">Section Adding </span>
+      </router-link>
+
+      <router-link class="button" to="/resetschoolyear">
+        <span class="material-icons">account_circle</span>
+        <span class="text">Reset School Year </span>
       </router-link>
 
       </div>

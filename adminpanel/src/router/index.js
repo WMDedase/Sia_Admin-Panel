@@ -11,16 +11,37 @@ const router = createRouter({
     {
       path: '/login',
       component: () => import('../views/StudentLogin.vue'),
-      meta: {
-        requiresAuthentication: false, // Set to false for login page
-      },
+      // meta: {
+      //   requiresAuthentication: false, // Set to false for login page
+      // },
     },
     {
       path: '/dashboard',
       component: () => import('../views/Dashboard.vue'),
-      meta: {
-        requiresAuthentication: false, 
-      },
+      // meta: {
+      //   requiresAuthentication: false, 
+      // },
+    },
+    {
+      path: '/accounts',
+      component: () => import('../views/Accounts.vue'),
+      // meta: {
+      //   requiresAuthentication: false, 
+      // },
+    },
+    {
+      path: '/sectionadding',
+      component: () => import('../views/SectionAdding.vue'),
+      // meta: {
+      //   requiresAuthentication: false, 
+      // },
+    },
+    {
+      path: '/resetschoolyear',
+      component: () => import('../views/ResetSchoolYear.vue'),
+      // meta: {
+      //   requiresAuthentication: false, 
+      // },
     },
 
   ]

@@ -93,110 +93,18 @@ onMounted(async () => {
       <div class="left-container">
         <div class="top-left">
           <h3><span class="material-icons">pending_actions</span>Clearance Status Overview</h3>
-          <table class="table table-bordered">
-            <thead class="table-label">
-              <tr>
-                <th>Clearance</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-if="currentUser">
-                <td>Clinic</td>
-                <td :style="{ color: clinicStatus === 'Cleared' ? 'green' : '#dbc501' }">
-                  {{ clinicStatus }}
-                </td>
-              </tr>
-              <tr v-if="currentUser">
-                <td>Guidance</td>
-                <td :style="{ color: guidanceStatus === 'Cleared' ? 'green' : '#dbc501' }">
-                  {{ guidanceStatus }}
-                </td>
-              </tr>
-              <tr v-if="currentUser">
-                <td>Inventory</td>
-                <td :style="{ color: inventoryStatus === 'Cleared' ? 'green' : '#dbc501' }">
-                  {{ inventoryStatus }}
-                </td>
-              </tr>
-              <tr v-if="currentUser">
-                <td>Library</td>
-                <td :style="{ color:  libraryStatus === 'Cleared' ? 'green' : '#dbc501' }">
-                  {{ libraryStatus }}
-                </td>
-              </tr>
-              <tr>
-                <td>Registrar</td>
-                <template v-if="psaStatus === 'Cleared' && goodMoralStatus === 'Cleared' && torStatus === 'Cleared'">
-                  <td style="color: green;">Cleared</td>
-                </template>
-                <template v-else>
-                  <td class="requirements">
-                    <thead>
-                      <tr class="table-head">
-                        <th>Requirement</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>PSA/Birth Certificate</td>
-                        <td :style="{ color: psaStatus === 'Cleared' ? 'green' : '#FFA500' }">
-                          {{ psaStatus }}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Good Moral</td>
-                        <td :style="{ color: goodMoralStatus === 'Cleared' ? 'green' : '#FFA500' }">
-                          {{ goodMoralStatus }}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Form-137/A</td>
-                        <td :style="{ color: torStatus === 'Cleared' ? 'green' : '#FFA500' }">
-                          {{ torStatus }}
-                        </td>
-                      </tr>
-                    </tbody>
-                  </td>
-                </template>
-              </tr>
-            </tbody>
-          </table>
+
         </div>
 
         <div class="bottom-left">
           <h3><span class="material-icons">info</span>Status Description</h3>
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Clearance Status</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="color: green;" class="fw-bold">Cleared</td>
-                <td>All requirements have been successfully fulfilled, and the clearance process is complete.</td>
-              </tr>
-              <tr>
-                <td style="color: #dbc501;" class="fw-bold">Not Cleared</td>
-                <td>The clearance process is ongoing. Approval or completion of remaining tasks is required. Students need to address these by accessing respective tabs to view and fulfill the necessary requirements.</td>
-              </tr>
-              <tr>
-                <td style="color: #FFA500;" class="fw-bold">Pending</td>
-                <td>Clearance is still in progress. Please check the relevant sections to complete any outstanding tasks and obtain necessary approvals. Ensure all requirements are fulfilled to move forward.</td>
-              </tr>
-            </tbody>
-          </table>
+
         </div>
       </div>
 
       <div class="right-container">
         <div class="vmg">
-          <h4>St. Nicholas Academy of Castillejos</h4>
-          <h5>MISSION - VISION - GOALS</h5>
-          <VMG />
+
         </div>
       </div>
     </div>
