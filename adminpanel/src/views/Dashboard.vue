@@ -90,22 +90,42 @@ onMounted(async () => {
     <hr>
 
     <div class="bottom-container">
-      <div class="left-container">
-        <div class="top-left">
-          <h3><span class="material-icons">pending_actions</span>Clearance Status Overview</h3>
+      <div class="top">
+      
+        <div class="totals">
+          <h3><span class="material-icons">school</span>Totals Information</h3>
 
+          <div class="account">
+            <h3>Total Accounts</h3>
+            <h5>0000</h5>
+          </div>
+
+          <div class="sub-total">
+
+          
+          <div class="student">
+            <h3>Total Students</h3>
+            <h5>0000</h5>
+          </div>
+          <div class="faculty">
+            <h3>Total Faculty Member</h3>
+            <h5>0000</h5>
+          </div>
+          <div class="personnel">
+            <h3>Total Personnel</h3>
+            <h5>0000</h5>
+          </div>
+        </div>
         </div>
 
-        <div class="bottom-left">
-          <h3><span class="material-icons">info</span>Status Description</h3>
-
-        </div>
       </div>
 
-      <div class="right-container">
-        <div class="vmg">
+      <div class="bottom">
+        <h3><span class="material-icons">school</span>Accounts Total Information</h3>
 
-        </div>
+        <BarChart
+        :juniorHighData="juniorHighData"
+        :seniorHighData="seniorHighData"/>
       </div>
     </div>
   </main>
@@ -113,10 +133,10 @@ onMounted(async () => {
 
 
 <script>
-
+import BarChart from '../components/BarChart.vue';
 export default {
   components: {
-
+    BarChart ,
   }
 };
 </script>
@@ -163,142 +183,102 @@ main {
 
 .bottom-container {
   display: flex;
-  gap: 0.5rem;
-  .left-container {
-    flex: 0.5;
-    margin-right: 1rem;
-    margin-bottom: 2em;
+  flex-direction: column;
+  gap: 5rem;
 
-    .top-left {
-      padding: 1rem;
-      margin-bottom: 2rem;
-      color: var(--dark);
-      border-radius: 5px;
-      border-left: 4px solid var(--dark-alt);
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
-
-      h3 {
-        text-shadow: 0 0 1px;
-        font-size: 20px;
-        position: relative;
-        bottom: 15px;
-      }
-
-      .material-icons {
-        position: relative;
-        font-size: 35px;
-        top: 12px;
-        right: 2px;
-      }
-
-      table {
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
-        border: 0.5px solid rgb(228, 228, 228);
-        width: 100%;
-      }
-
-      th {
-        color: var(--dark);
-        font-size: 18px;
-        text-align: center;
-        text-shadow: 0 0 1px;
-      }
-
-      td {
-        color: var(--dark);
-        font-weight: 600;
-        padding: 0.6rem 0.3rem;
-        text-align: center;
-      }
-
-      .requirements {
-        font-size: 14px;
-        
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .table-head{
-          display: flex;
-          gap: 1.7rem
-        }
-      }
-
-      .center-text {
-        text-align: center;
-      }
-    }
-
-    .bottom-left {
-      padding: 1rem;
-      margin-bottom: 2rem;
-      color: var(--dark);
-      border-radius: 5px;
-      border-left: 4px solid var(--dark-alt);
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
-
-      h3 {
-        text-shadow: 0 0 1px;
-        font-size: 20px;
-        position: relative;
-        bottom: 15px;
-      }
-
-      .material-icons {
-        position: relative;
-        font-size: 35px;
-        top: 12px;
-        right: 2px;
-      }
-
-      table {
-        width: 100%;
-      }
-
-      th {
-        color: var(--dark);
-        font-size: 18px;
-        text-align: center;
-        text-shadow: 0 0 1px;
-      }
-
-      td {
-        color: var(--dark);
-        font-weight: 600;
-        padding: 0.6rem 0.3rem;
-        text-align: left;
-      }
+  h3 {
+    text-shadow: 0 0 1px;
+    font-size: 20px;
+    position:relative;
+    bottom: 15px;
+    color: var(--dark);
+    .material-icons{
+      position:relative;
+      font-size: 35px;
+      top: 12px;
+      right: 2px;
     }
   }
 
-  .right-container {
-    flex: 0.5;
-    margin-left: 1rem;
+  .top {
 
-    .vmg {
-      padding: 1rem;
-      margin-bottom: 2rem;
-      color: var(--dark);
-      border-radius: 5px;
-      border-right: 4px solid var(--dark-alt);
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+    .totals{
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      padding: 2rem;
+      border-top: 8px solid var(--dark);
+      border-radius: 10px;
 
-      h4 {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 24px;
-        font-weight: 900;
-        text-align: center;
-        text-shadow: 0 0 1px;
+      .account{
+        align-self: center;
+        padding: 2rem;
+        border-radius: 10px;
+        h3{
+          color: var(--dark);
+          font-size: 35px;
+        }
+  
+        h5{
+          text-align: center;
+          font-size:30px;
+          font-weight: 700;
+        }
       }
 
-      h5 {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 20px;
-        font-weight: 900;
-        text-align: center;
-        text-shadow: 0 0 1px;
+      .sub-total{
+        display: flex;
+        gap: 3rem;
+        justify-content: center;
+
+        h3{
+          font-size:25px;
+          color: var(--dark);
+
+        }
+
+        h5{
+          font-size: 23px;
+          text-align: center;
+          font-weight: 700;
+        }
+      .student{
+        padding: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        border-top: 8px solid var(--dark);
+      }
+
+      .faculty{
+        padding: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        border-top: 8px solid var(--dark);
+      }
+
+      .personnel{
+        padding: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        border-top: 8px solid var(--dark);
+
+      }
+
       }
     }
+
+
+
+  }
+  .bottom{
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    border-left: 8px solid var(--dark);
+    border-right: 8px solid var(--dark);
+
+    border-radius: 10px;
+
   }
 }
 </style>

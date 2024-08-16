@@ -65,17 +65,17 @@ watchEffect(() => {
           </router-link>
 
         <router-link class="button" to="/accounts">
-          <span class="material-icons">calendar_month</span>
+          <span class="material-icons">account_circle</span>
           <span class="text">Account</span>
       </router-link>
 
         <router-link class="button" to="/sectionadding">
-          <span class="material-icons">account_circle</span>
+          <span class="material-icons">add_circle</span>
           <span class="text">Section Adding </span>
       </router-link>
 
       <router-link class="button" to="/resetschoolyear">
-        <span class="material-icons">account_circle</span>
+        <span class="material-icons">restore</span>
         <span class="text">Reset School Year </span>
       </router-link>
 
